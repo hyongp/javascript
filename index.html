@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>시애틀의 잠 못이루는 밤</title>
+	<meta charest="utf-8">
+	<style>
+		body{
+			margin:0;
+		}
+		a {
+			color:darkgray;
+			text-decoration: none;
+		}
+		h1 {
+			font-size: 45px;
+			text-align: center;
+			border-bottom: 5px solid lightblue;
+			margin: 0;
+			padding:20px;
+		}
+		ol {
+			font-size: 20px;
+			border-right: 5px solid lightblue;
+			width: 150px;
+			margin: 0;
+			padding-top: 50px;
+			padding-left: 150px;
+			padding-right: 50px;
+		}
+		#grid {
+			display: grid;
+			grid-template-columns: 150px 1fr;
+		}
+		#grid ol{
+			padding-left: 33px;
+		}
+		#grid #article {
+			margin-left: 100px;
+			padding-left: 50px;
+			width: 800px;
+		}
+		@media(max-width: 800px) {
+			#grid{
+				display: block;
+			}
+			ol {
+				border-right: none;
+			}
+			h1 {
+				border-bottom: none;
+			}
+		}
+		.center {
+ 			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+  			width: 50%;
+			}
+		.textcenter {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a href="index.html">시애틀의 잠 못이루는 밤</a></h1>
+
+	<input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor='black';
+	document.querySelector('body').style.color='white';">
+
+	<input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor='white';
+	document.querySelector('body').style.color='black';">
+
+	<input id="night_day" type="button" value="night" onclick="
+		var target = document.querySelector('body');
+		if (document.querySelector('#night_day').value === 'night'){
+			document.querySelector('body').style.backgroundColor ='black';
+			document.querySelector('body').style.color ='white';
+			document.querySelector('#night_day').value = 'day';
+		} else {
+			document.querySelector('body').style.backgroundColor='white';
+			document.querySelector('body').style.color='black';
+			document.querySelector('#night_day').value = 'night';
+		} 
+	">
+
+		<input id="night_day" type="button" value="night" onclick="
+		var target = document.querySelector('body');
+		if (this.value === 'night'){
+			target.style.backgroundColor = 'black';
+			target.style.color = 'white';
+			this.value = 'day';
+
+			var alist = document.querySelectorAll('a');
+			var i = 0;
+			while(i < alist.length){
+				alist[i].style.color = 'powderblue';
+				i = i + 1;
+			}
+		} else {
+			target.style.backgroundColor = 'white';
+			target.style.color = 'black';
+			this.value = 'night';
+
+			var alist = document.querySelectorAll('a');
+			var i = 0;
+			while(i < alist.length){
+				alist[i].style.color = 'blue';
+				i = i + 1;
+		} 
+	">
+
+	<div id="grid">
+		<ol>
+			<li><a href="1.html" >스타벅스 1호점 </a></li>
+			<li><a href="2.html" >스페이스니들 </a></li>
+			<li><a href="3.html" >유덥 </a></li>
+			<li><a href="1.html" >마운틴레이니어 </a></li>
+			<li><a href="2.html" >아마존 </a></li>	
+		</ol>
+		
+		<div id="picture">
+			<div id="article">
+				<h2 class="textcenter" style="background-color:yellow; color:powderblue;"><strong>시애틀에 가면 꼭 가야하는 관광 명소들을 소개시켜줄게</strong></h2>
+			</div>
+			<p><img src="seattle1.jpg" class="center"></p>
+		</div>
+	</div>	
+</body>
+</html>
